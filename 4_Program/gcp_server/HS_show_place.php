@@ -31,13 +31,12 @@
       </thead>
       <tbody>
         <?php
-          $db_conn = mysqli_connect('localhost','root', 'system', 'HS_db');
+          $db_conn = mysqli_connect('localhost','****', '****', '****');
           if(mysqli_connect_errno())
           {
            die('Connect Error : '.mysqli_connect_error());
           }
           $place=$_GET['place'];
-          echo $place;
           $db_sql = "SELECT * FROM HS WHERE place=\"".$place."\" ORDER BY time DESC LIMIT 12;";
           echo $db_sql;
           $db_result = mysqli_query( $db_conn, $db_sql);
