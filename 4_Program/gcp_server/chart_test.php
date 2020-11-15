@@ -20,14 +20,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="viewport" content="width=device-width, initial-scale=2.0">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js">
 </script>
     <title>손소독제 잔량</title>
     <style type="text/css">
       body{
         font-family: Arial;
-          margin: 80px 100px 10px 100px;
+          margin: 8px 10px 1px 10px;
           padding: 0;
           color: white;
           text-align: center;
@@ -37,7 +37,7 @@
         color: #E8E9EB;
         background: #222;
                 border: #555652 1px solid;
-        padding: 10px;
+        padding: 1px;
       }
     </style>
   </head>
