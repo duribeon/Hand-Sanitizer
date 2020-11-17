@@ -80,7 +80,7 @@
 								<p align="center"><input type="button" class="button" value="2층" onclick="location.href='detail.php?place=CH201'"></p>
 								<p align="center"><input type="button" class="button" value="3층" onclick="location.href='detail.php?place=CH301'"></p>
 								<p align="center"><input type="button" class="button" value="4층" onclick="location.href='detail.php?place=CH401'"></p>
-								<p align="center"><input type="button" class="button" value="5층" onclick="location.href='detail.php?place=CH501'"></p>
+								<p align="center"><input type="button" class="button" value="5층" onclick="location.href='chart/chart_test.php?place=CH501'"></p>
 
 					</div>
 					<img src="./back.png">
@@ -92,7 +92,7 @@
 					<label for="slide01" class="left"></label>
 					<div class="textbox">
 						<h1 style="margin-bottom:30px;"><p style="font-size:60px;" align="center">광개토관</p></h1>
-								<p align="center" ><input type="button" class="button" value="1층" onclick="location.href='getParam_test.html?place=GW101'"></p>
+								<p align="center" ><input type="button" class="button" value="1층" onclick="location.href='HS_show_place.php?place=Gwang101'"></p>
 								<p align="center"><input type="button" class="button" value="2층" onclick="location.href='detail.php?place=GW201'"></p>
 								<p align="center"><input type="button" class="button" value="3층" onclick="location.href='detail.php?place=GW301'"></p>
 								<p align="center"><input type="button" class="button" value="4층" onclick="location.href='detail.php?place=GW401'"></p>
@@ -102,7 +102,7 @@
 					<label for="slide03" class="right"></label>
 				</a>
 			</li>
-			<li>youtu
+			<li>
 				<a>
 					<label for="slide02" class="left"></label>
 					<div class="textbox">
