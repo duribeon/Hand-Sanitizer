@@ -31,17 +31,16 @@
       </thead>
       <tbody>
         <?php
-          $db_conn = mysqli_connect('localhost','****', '****', '****');
+          $db_conn = mysqli_connect('localhost','root', '****', 'HS_db');
           if(mysqli_connect_errno())
           {
            die('Connect Error : '.mysqli_connect_error());
           }
           $place=$_GET['place'];
           $db_sql = "SELECT * FROM HS WHERE place=\"".$place."\" ORDER BY time DESC LIMIT 12;";
-          echo $db_sql;
           $db_result = mysqli_query( $db_conn, $db_sql);
           while( $db_row = mysqli_fetch_array( $db_result ) )
-          {
+            {
             echo '<tr><td>'. $db_row['place'].'</td><td>'.$db_row[ 'time' ] . '</td><td>';
             if($db_row['remains']>=50)
               echo '<font color="green">'.$db_row['remains'].'</td></tr>';
@@ -53,5 +52,5 @@
         ?>
       </tbody>
     </table>
-  </body>
-</html>
+    </body>
+    </html>
