@@ -132,6 +132,7 @@ h2 {
   clear: both; }
 
 body {
+
   font-size: 14px;
   line-height: 1.8;
   color: #222;
@@ -145,7 +146,7 @@ body {
   -o-background-size: cover;
   -ms-background-size: cover;
   background-position: center center;
-  padding: 115px 0; }
+  padding: 0; }
 
 .container {
   width: 660px;
