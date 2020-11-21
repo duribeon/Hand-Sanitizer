@@ -1,6 +1,6 @@
 <?php
 
-        echo "hi"
+        
         $connect = mysqli_connect("localhost", "root", "gakgak","gakgak");
 or die("fail");
         $userid=$_POST['userID'];
