@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if ($_SESSION["userlogin"] == NULL){
+    if ($_SESSION["id"] == NULL){
         header('Location: http://../HTML/login.html');
     }
 
