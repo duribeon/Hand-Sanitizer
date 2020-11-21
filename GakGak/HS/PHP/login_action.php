@@ -1,10 +1,10 @@
 <?php
         session_start();
-        $connect = mysqli_connect("localhost","root","gakgak","duribeon") or die("fail");
+        $connect = mysqli_connect("localhost","root","gakgak","gakgak") or die("fail");
         $id=$_POST['userID'];
         $password=$_POST['password'];
         //아이디가 있는지 검사
-        $query = "SELECT * FROM user WHERE id='$id'";
+        $query = "SELECT * FROM HS_admin WHERE id='$id'";
         $result = $connect->query($query);
         if(mysqli_num_rows($result)==1) {
                 $row=mysqli_fetch_assoc($result);
@@ -13,7 +13,7 @@
                         if(isset($_SESSION['id'])){
                         ?>      <script>
                                         alert('<?php echo $id ?> 님 로그인 되었습니다.'); //로그인 되었습니다를 띄우고
-                                        location.replace("list.html");
+                                        location.replace("full_list.html");
                                 </script>
 <?php
                         }
