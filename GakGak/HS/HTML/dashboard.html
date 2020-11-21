@@ -11,37 +11,59 @@
 </head>
 
 <body>
-    <div id="login">
-        <br><br>
-        <h1 class="text-center text-white pt-5">Hand-Sanitizer <br>Management</h1>
-        <div class="container">
-            <div id="login-row" class="row justify-content-center align-items-center">
-                <div id="login-column" class="col-md-6">
-                    <div id="login-box" class="col-md-12">
-                        <!-- login_action.php 생성 -->
-                        <form id="login-form" class="form" action="login_action.php" method="post">
-                            <h3 class="text-center text-info">Login</h3>
-                            <div class="form-group">
-                                <label for="username" class="text-info">Username:</label><br>
-                                <input type="text" name="username" id="username" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="password" class="text-info">Password:</label><br>
-                                <input type="text" name="password" id="password" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                                <input type="submit" name="submit" class="btn btn-info btn-md" value="Login">
-                            </div>
-                            <div id="register-link" class="text-right">
-                                <a href="register.html" class="text-info">Register here</a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+  <h1>MySQL 접속해서 데이터 가져오기</h1>
+
+    <?php
+
+    echo "dksfnjfdnksnf";
+    //mysql 접속 계정 정보 설정
+    $mysql_host = '34.64.157.47:3306';
+    $mysql_user = 'duri';
+    $mysql_password = 'gakgak';
+    $mysql_db = 'gakgak';
+
+    //connetc 설정(host,user,password)
+    $conn = mysql_connect($mysql_host,$mysql_user,$mysql_password);
+
+    //db 연결
+    $dbconn = mysql_select_db($mysql_db,$conn);
+
+    //charset UTF8
+    mysql_query("set names utf8");
+
+    //쿼리문 작성
+    $query = "select * from HS_list";
+
+    //대시보드 카드1
+    select BUILDING, LOCATION
+    from HS_list
+    where USERID= '' and chg = (select max(chg) from HS_list);
+
+    //대시보드 카드2
+    select BUILDING, LOCATION
+    from HS_list
+    where USERID= '' and chg = (select min(chg) from HS_list);
+
+
+    //쿼리보내고 결과를 변수에 저장
+    $result = mysql_query($query);
+
+    echo $result;
+
+    echo "dksfnjfdnksnf";
+
+    while($row = mysql_fetch_array($result)){
+        echo "BUILDING: ".$row[BUILDING]."/ LOCATION: ".$row[LOCATION]."/ REMAINDER: ".$row[REMAINDER]
+        ."/ INIT_WEIGHT: ".$row[INIT_WEIGHT]."/ ORGAN: ".$row[ORGAN]."/ CHKDATE: ".$row[CHKDATE]
+        ."/ USERID: ".$row[USERID]."";
+    }
+
+    ?>
+
+
+
+
 </body>
 
 </html>
