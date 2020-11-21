@@ -1,14 +1,10 @@
 <?php
-    session_start();
-    if ($_SESSION["id"] == NULL){
-        header('Location: http://../HTML/login.html');
-    }
+    $id = $_GET['id'];
 
     $con = mysqli_connect("localhost","root","system","gakgak");
     if (mysqli_connect_errno())
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
 
-    $id = $_GET['userID'];
     $result = mysql_query($con, "SELECT * FROM HS_list WHERE USERID='$id'");
     if (!$result){
         die("Query to show fields from table failed");
