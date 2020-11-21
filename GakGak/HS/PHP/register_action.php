@@ -8,7 +8,10 @@ or die("fail");
         $email=$_POST['email'];
         $username=$_POST['username'];
 
-        $query = "INSERT INTO HS_admin (USERID,PASSWD,EMAIL,USERNAME) values ($userid, $passwd,$email,$username)";
+        print_r($_POST);
+
+
+        /*$query = "INSERT INTO HS_admin (USERID,PASSWD,EMAIL,USERNAME) values ($userid, $passwd,$email,$username)";
         $result = $connect->query($query);
         if($result) {
         ?>      <script>
@@ -21,5 +24,7 @@ or die("fail");
                         alert("fail");
                 </script>
 <?php   }
-        mysqli_close($connect);
+        mysqli_close($connect);*/
+
+
 ?>
