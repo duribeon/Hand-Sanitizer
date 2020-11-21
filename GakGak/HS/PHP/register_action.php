@@ -1,11 +1,11 @@
 <?php
         $connect = mysqli_connect("localhost", "root", "gakgak","duribeon");
 or die("fail");
-        $id=$_POST['name'];
-        $password=$_POST['password'];
+        $userid=$_POST['name'];
+        $passwd=$_POST['password'];
         $email=$_POST['email'];
         $username=$_POST['username'];
-        $query = "INSERT INTO user values ($id, $password,$email,$username)";
+        $query = "INSERT INTO user values ($userid, $passwd,$email,$username)";
         $result = $connect->query($query);
         if($result) {
         ?>      <script>
