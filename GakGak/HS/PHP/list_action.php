@@ -4,11 +4,12 @@
         header('Location: http://../HTML/login.html');
     }
 
-    $con = mysqli_connect("34.123.128.137","duri","gakgak","gakgak");
+    $con = mysqli_connect("localhost","root","system","gakgak");
     if (mysqli_connect_errno())
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
 
-    $result = mysql_query($con, "SELECT * FROM HS_list WHERE USERID=\'duri\'");
+    $id = $_POST['userID'];
+    $result = mysql_query($con, "SELECT * FROM HS_list WHERE USERID='$id'");
     if (!$result){
         die("Query to show fields from table failed");
     }
