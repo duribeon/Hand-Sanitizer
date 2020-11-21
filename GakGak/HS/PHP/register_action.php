@@ -1,8 +1,7 @@
 <?php
 
         
-        $connect = mysqli_connect("localhost", "root", "gakgak","gakgak");
-or die("fail");
+        $connect = mysqli_connect("localhost", "root", "gakgak","gakgak") or die("fail");
         $userid=$_POST['userID'];
         $passwd=$_POST['password'];
         $email=$_POST['email'];
