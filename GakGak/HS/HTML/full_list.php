@@ -72,11 +72,12 @@
       <div class="logo">
       </div>
     <div class="brand">
-	<?
+	로그인: 
+	<?php
 		session_start();
 		echo $_SESSION['id'];
+		$sess_id = $_SESSION['id'];
 	?>
-        님이 로그인하였습니다.
     </div>
 
     </div>
@@ -106,10 +107,23 @@
               <th data-field="salary" data-sortable="true">remainder</th>
               <th data-field="city">Organization</th>
               <th data-field="actions" data-formatter="operateFormatter" data-events="operateEvents">Dashboard</th>
-            </thead>
-
-		<?php include("../PHP/list_action.php"; ?>
-            
+            </thead>	
+	<?php
+		$connect = mysqli_connect("localhost","root","system","gakgak") or die("fail");
+		$query = "SELECT * FROM HS_list WHERE USERID='$sess_id'";
+		$result = $connect->query($query);
+		echo "<tbody>";		
+		while ($row = mysqli_fetch_array($result)){
+			echo "<tr>";
+			echo "<td>".$row['BUILDING']."</td>";
+			echo "<td>".$row['LOCATION']."</td>";
+			echo "<td>".$row['REMAINDER']."</td>";
+			echo "<td>".$row['ORGAN']."</td>";
+			echo "<td></td>";
+			echo "</tr>";
+		}
+		echo "</tbody>";
+	?>
           </table>
         </div>
 
