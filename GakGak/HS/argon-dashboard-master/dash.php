@@ -1,5 +1,4 @@
 
-
 <?php 
 //session_start();
 //$sess_id=$_SESSION['id'];
@@ -383,21 +382,15 @@ else{
 
   
 /*!
-
 =========================================================
 * Argon Dashboard - v1.2.0
 =========================================================
-
 * Product Page: https://www.creative-tim.com/product/argon-dashboard
 * Copyright 2020 Creative Tim (https://www.creative-tim.com)
 * Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md)
-
 * Coded by www.creative-tim.com
-
 =========================================================
-
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
 */
 
 
@@ -1156,8 +1149,8 @@ var FormControl = (function() {
 // Google maps
 //
 var values="<?php echo $building;?>";
-let arr1=['"<?php echo $garr[0];?>"'];
-let arr2=['"<?php echo $darr[0];?>"'];
+let arr1=['"<?php echo $garr[0];?>"','"<?php echo $garr[2];?>"','"<?php echo $garr[5];?>"','"<?php echo $garr[8];?>"','"<?php echo $garr[11];?>"','"<?php echo $garr[14];?>"','"<?php echo $garr[17];?>"','"<?php echo $garr[20];?>"'];
+let arr2=['"<?php echo $darr[0];?>"','"<?php echo $darr[2];?>"','"<?php echo $darr[5];?>"','"<?php echo $darr[8];?>"','"<?php echo $darr[11];?>"','"<?php echo $darr[14];?>"','"<?php echo $darr[17];?>"','"<?php echo $darr[20];?>"'];
 
 
 var $map = $('#map-default'),
@@ -1304,10 +1297,10 @@ var SalesChart = (function() {
       },
       data: {
         
-        labels: [arr1[0], 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', arr2[0]],
+        labels: [arr1[0], arr1[1], arr1[2], arr1[3], arr1[4], arr1[5], arr1[6], arr1[7]],
         datasets: [{
           label: 'Performance',
-          data: [10, 20, 10, 30, 15, 40, 20, 60, arr1[0]]
+          data: [arr2[0], arr2[1], arr2[2], arr2[3], arr2[4], arr2[5], arr2[6], arr2[7]]
         }]
       }
     });
