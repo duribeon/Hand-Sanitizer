@@ -14,9 +14,10 @@
                         if(isset($_SESSION['id'])){
                             echo  '<script>
                                         alert("로그인 되었습니다."); //로그인 되었습니다를 띄우고
-                                        location.href="../HTML/full_list.html";
+                                        //location.href="../HTML/full_list.php";
                                 </script>';
 				
+				Header("Location:../HTML/full_list.php");
                         }
                         else{
                                 echo "session fail"; //세션아이디가 정의되지 않았음

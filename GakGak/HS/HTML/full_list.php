@@ -72,7 +72,7 @@
       <div class="logo">
       </div>
     <div class="brand">
-	로그인: 
+	Login: 
 	<?php
 		session_start();
 		echo $_SESSION['id'];
@@ -106,11 +106,12 @@
               <th data-field="country" data-sortable="true">location</th>
               <th data-field="salary" data-sortable="true">remainder</th>
               <th data-field="city">Organization</th>
+	      <th data-field="time">CHKDATE</th>
               <th data-field="actions" data-formatter="operateFormatter" data-events="operateEvents">Dashboard</th>
             </thead>	
 	<?php
 		$connect = mysqli_connect("localhost","root","system","gakgak") or die("fail");
-		$query = "SELECT * FROM HS_list WHERE USERID='$sess_id'";
+		$query = "SELECT * FROM HS_list WHERE USERID='$sess_id' ORDER BY CHKDATE DESC LIMIT 1";
 		$result = $connect->query($query);
 		echo "<tbody>";		
 		while ($row = mysqli_fetch_array($result)){
@@ -119,6 +120,7 @@
 			echo "<td>".$row['LOCATION']."</td>";
 			echo "<td>".$row['REMAINDER']."</td>";
 			echo "<td>".$row['ORGAN']."</td>";
+			echo "<td>".$row['CHKDATE']."</td>";
 			echo "<td></td>";
 			echo "</tr>";
 		}

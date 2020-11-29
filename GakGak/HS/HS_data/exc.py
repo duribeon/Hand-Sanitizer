@@ -20,11 +20,9 @@ curs = conn.cursor()
 sql="USE gakgak;"
 curs.execute(sql)
 
-sql='INSERT INTO HS_list (BUILDING,LOCATION,REMAINDER,INIT_WEIGT,ORGAN,CHKDATE,USERID,chg) VALUES ("AI center",446);'
-val=time
-val2=input_data
+sql='INSERT INTO HS_list (BUILDING,LOCATION,REMAINDER,INIT_WEIGHT,ORGAN,CHKDATE,USERID) VALUES ("AI","405",%s,100,"SEJONG",STR_TO_DATE(%s,"%%Y%%m%%d%%H%%i%%s"),"duri");'
+val=input_data
+val2=time
 curs.execute(sql,(val,val2))
-
 conn.commit()
 conn.close()
-
