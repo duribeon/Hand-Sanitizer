@@ -8,14 +8,14 @@ $sess_id='duri';
 $query = "SELECT * FROM HS_list WHERE USERID='$sess_id' AND LOCATION='446' ORDER BY CHKDATE DESC LIMIT 1";
 $result=$connect->query($query);
 while ($row = mysqli_fetch_array($result)){
-                      echo $row['REMAINDER'] . " " . $row['INIT_WEIGHT'];
+#                      echo $row['REMAINDER'] . " " . $row['INIT_WEIGHT'];
 
                        $remain=$row['REMAINDER'];
                        $init=$row['INIT_WEIGHT'];
                       }
 
  $per=(int)$remain/(int)$init *100;
-
+#echo $per;
 ?>
 
 <!DOCTYPE html>
@@ -181,7 +181,6 @@ while ($row = mysqli_fetch_array($result)){
               </div>
             </div>
             <div class="card-body">
-          
 
 <div class="container" style="width: 600px; text-align: center;">
   <img src ="base.jpg" style="transform:translatex(-50px);width: 239px; height: 350px;">
@@ -205,7 +204,6 @@ while ($row = mysqli_fetch_array($result)){
         <?php
         if($per>70){
 	echo ' 
-     
         <stop  offset="0" style="stop-color:#008cff"/>
         <stop  offset="0.1643" style="stop-color:#008cff"/>
         <stop  offset="0.3574" style="stop-color:#209bff"/>
@@ -214,8 +212,8 @@ while ($row = mysqli_fetch_array($result)){
         <stop  offset="0.874" style="stop-color:#a9e7ff"/>
         <stop  offset="1" style="stop-color:#dceff1"/>';
 }
-else if(40<$per<=70){
-echo'
+else if(40<$per){
+echo '
         <stop  offset="0" style="stop-color:#008cff"/>
         <stop  offset="0.1643" style="stop-color:#008cff"/>
         <stop  offset="0.3574" style="stop-color:#f3c78e"/>
@@ -226,7 +224,6 @@ echo'
 }
 else{
        echo'
-        
         <stop  offset="0" style="stop-color:#008cff"/>
         <stop  offset="0.1643" style="stop-color:#008cff"/>
         <stop  offset="0.3574" style="stop-color:#fd7575"/>
