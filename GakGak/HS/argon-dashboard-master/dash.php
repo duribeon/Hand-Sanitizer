@@ -24,6 +24,32 @@ while ($row = mysqli_fetch_array($result)){
 
  $per=(int)$remain/(int)$init *100;
 
+ $garr=[];
+ $darr=[];
+
+
+ $query = "SELECT * FROM HS_list WHERE USERID='$sess_id' AND LOCATION='446' ORDER BY CHKDATE DESC LIMIT 24";
+$result=$connect->query($query);while ($row = mysqli_fetch_array($result)){
+  #                      echo $row['REMAINDER'] . " " . $row['INIT_WEIGHT'];
+  
+                         $remaina=$row['REMAINDER'];
+                         $inita=$row['INIT_WEIGHT'];
+  
+                         $buildinga=$row['BUILDING'];
+                         $loca=$row['LOCATION'];
+                         $date=$row['CHKDATE'];
+  
+                         $orga=$row['ORGAN'];
+                         $chga=$row['chg'];
+
+                         $per2=(int)$remaina/(int)$inita *100;
+
+                         array_push($garr,$per2);
+                         array_push($darr,$date);
+                         
+                        }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -1130,7 +1156,7 @@ var FormControl = (function() {
 //
 // Google maps
 //
-var values="<?php echo  $building;?>";
+var values="<?php echo $building;?>";
 var $map = $('#map-default'),
     map,
     lat,
