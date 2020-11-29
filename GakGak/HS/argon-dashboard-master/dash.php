@@ -43,7 +43,6 @@ $result=$connect->query($query);while ($row = mysqli_fetch_array($result)){
                          $chga=$row['chg'];
 
                          $per2=(int)$remaina/(int)$inita *100;
-
                          array_push($garr,$per2);
                          array_push($darr,$date);
                          
@@ -1157,6 +1156,10 @@ var FormControl = (function() {
 // Google maps
 //
 var values="<?php echo $building;?>";
+let arr1=['"<?php echo $garr[0];?>"'];
+let arr2=['"<?php echo $darr[0];?>"'];
+
+
 var $map = $('#map-default'),
     map,
     lat,
@@ -1301,10 +1304,10 @@ var SalesChart = (function() {
       },
       data: {
         
-        labels: [values, 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        labels: [arr1[0], 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', arr2[0]],
         datasets: [{
           label: 'Performance',
-          data: [10, 20, 10, 30, 15, 40, 20, 60, 60]
+          data: [10, 20, 10, 30, 15, 40, 20, 60, arr1[0]]
         }]
       }
     });
