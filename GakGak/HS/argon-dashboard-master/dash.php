@@ -1130,7 +1130,7 @@ var FormControl = (function() {
 //
 // Google maps
 //
-var values="<?php echo $building;?>";
+var values="<?php echo  $building;?>";
 var $map = $('#map-default'),
     map,
     lat,
