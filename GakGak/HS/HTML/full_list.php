@@ -63,7 +63,7 @@
   <script src="assets/js/demo/demo.js"></script>
 
 </head>
-<body style="background-color: darkturquoise;">
+<body style="background-color: white;">
 
 <div class="wrapper">
   <!--   Creative Tim Branding   -->
