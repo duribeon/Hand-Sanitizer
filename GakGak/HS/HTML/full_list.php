@@ -70,9 +70,10 @@
   <!--<a href="http://creative-tim.com">-->
     <div class="logo-container">
       <div class="logo">
+          <img src="./images/profile.png">
       </div>
     <div class="brand">
-	Login: 
+	Login:
 	<?php
 		session_start();
 		echo $_SESSION['id'];
@@ -108,12 +109,12 @@
               <th data-field="city">Organization</th>
 	      <th data-field="time">CHKDATE</th>
               <th data-field="actions" data-formatter="operateFormatter" data-events="operateEvents">Dashboard</th>
-            </thead>	
+            </thead>
 	<?php
 		$connect = mysqli_connect("localhost","root","system","gakgak") or die("fail");
 		$query = "SELECT * FROM HS_list WHERE USERID='$sess_id' ORDER BY CHKDATE DESC LIMIT 1";
 		$result = $connect->query($query);
-		echo "<tbody>";		
+		echo "<tbody>";
 		while ($row = mysqli_fetch_array($result)){
 			echo "<tr>";
 			echo "<td>".$row['BUILDING']."</td>";
