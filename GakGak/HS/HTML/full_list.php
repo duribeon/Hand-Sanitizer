@@ -70,7 +70,7 @@
   <!--<a href="http://creative-tim.com">-->
     <div class="logo-container">
       <div class="logo">
-          <img src="./images/profile.jpeg">
+          <img src="./images/profile.jpeg" style="width:58px; height:58px;">
       </div>
     <div class="brand">
 	Login:
