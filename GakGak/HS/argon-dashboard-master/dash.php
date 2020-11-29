@@ -14,6 +14,8 @@ while ($row = mysqli_fetch_array($result)){
                        $init=$row['INIT_WEIGHT'];
                       }
 
+ $per=(int)$remain/(int)$init *100;
+
 ?>
 
 <!DOCTYPE html>
