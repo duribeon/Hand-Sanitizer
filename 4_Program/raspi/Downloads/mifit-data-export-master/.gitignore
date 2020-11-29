@@ -1,0 +1,7 @@
+log
+*.csv
+*.bak
+*.pl
+*.pm
+db/mihealth.db*
+db/origin_db*

@@ -1,0 +1,43 @@
+{
+	"info": {
+		"_postman_id": "22a31112-70ca-4613-838b-e4be62c7a7a9",
+		"name": "Mobius-release2 (json)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		
+		{
+			"name": "cin 조회",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-M2M-RI",
+						"value": "12345"
+					},
+					{
+						"key": "X-M2M-Origin",
+						"value": "Superman"
+					}
+				],
+				"url": {
+					"raw": "http://203.253.128.161:7579/Mobius/gak_gak/camera/la",
+					"host": [
+						"http://203.253.128.161:7579"
+					],
+					"path": [
+						"Mobius",
+						"gak_gak",
+						"camera",
+						"la"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
