@@ -218,7 +218,7 @@ while ($row = mysqli_fetch_array($result)){
         <stop  offset="0.874" style="stop-color:#a9e7ff"/>
         <stop  offset="1" style="stop-color:#dceff1"/>';
 }
-else if(40<$per){
+else if(20<$per){
 echo '
         <stop  offset="0" style="stop-color:#008cff"/>
         <stop  offset="0.1643" style="stop-color:#008cff"/>
