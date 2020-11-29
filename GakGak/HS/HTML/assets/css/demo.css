@@ -384,8 +384,9 @@ h1 small{
 .logo-container .logo{
     overflow: hidden;
     border-radius: 50%;
-    border: 1px solid #333333;
-    width: 60px;
+    border: 2px solid #FFFFFF;
+    width: 58px;
+    height: 58px;
     float: left;
 }
 .logo-container .brand{
