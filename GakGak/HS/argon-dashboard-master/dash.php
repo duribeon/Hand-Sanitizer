@@ -1,11 +1,11 @@
 
 
 <?php 
-//session_start();
-//$sess_id=$_SESSION['id'];
+session_start();
+$sess_id=$_SESSION['id'];
 $connect = mysqli_connect("localhost","root","system","gakgak") or die("fail");
-
-$sess_id='duri';
+#echo $_SESSION['id'];
+#$sess_id='duri';
 $query = "SELECT * FROM HS_list WHERE USERID='$sess_id' AND LOCATION='446' ORDER BY CHKDATE DESC LIMIT 1";
 $result=$connect->query($query);
 while ($row = mysqli_fetch_array($result)){
@@ -86,7 +86,7 @@ while ($row = mysqli_fetch_array($result)){
 
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                  <li class="breadcrumb-item"><a href="../HTML/full_list.html"style="color: darkturquoise;"><i class="fas fa-home"></i></a></li>
+                  <li class="breadcrumb-item"><a href="../HTML/full_list.php"style="color: darkturquoise;"><i class="fas fa-home"></i></a></li>
                   <li class="breadcrumb-item"><a href="#" style="color: darkturquoise;">Dashboards</a></li>
                   <!--<li class="breadcrumb-item active" aria-current="page">Default</li> -->
                 </ol>
