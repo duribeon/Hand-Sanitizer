@@ -203,34 +203,29 @@ while ($row = mysqli_fetch_array($result)){
         
 
         <?php
-        
+        if($per>70){
 	echo ' 
-
-        <!--
-        
+     
         <stop  offset="0" style="stop-color:#008cff"/>
         <stop  offset="0.1643" style="stop-color:#008cff"/>
         <stop  offset="0.3574" style="stop-color:#209bff"/>
         <stop  offset="0.5431" style="stop-color:#7cacf5"/>
         <stop  offset="0.7168" style="stop-color:#99ceff"/>
         <stop  offset="0.874" style="stop-color:#a9e7ff"/>
-        <stop  offset="1" style="stop-color:#dceff1"/>
- -->
-
-<!-- type2 -->
-
-        
+        <stop  offset="1" style="stop-color:#dceff1"/>';
+}
+else if(40<$per<=70){
+echo'
         <stop  offset="0" style="stop-color:#008cff"/>
         <stop  offset="0.1643" style="stop-color:#008cff"/>
         <stop  offset="0.3574" style="stop-color:#f3c78e"/>
         <stop  offset="0.5431" style="stop-color:#fc8f8f"/>
         <stop  offset="0.7168" style="stop-color:#fa945a"/>
         <stop  offset="0.874" style="stop-color:#ff7300"/>
-        <stop  offset="1" style="stop-color:#dceff1"/>
-
-
-
-        <!-- type3
+        <stop  offset="1" style="stop-color:#dceff1"/>';
+}
+else{
+       echo'
         
         <stop  offset="0" style="stop-color:#008cff"/>
         <stop  offset="0.1643" style="stop-color:#008cff"/>
@@ -238,8 +233,7 @@ while ($row = mysqli_fetch_array($result)){
         <stop  offset="0.5431" style="stop-color:#fc8f8f"/>
         <stop  offset="0.7168" style="stop-color:#ff4242"/>
         <stop  offset="0.874" style="stop-color:#ff0000"/>
-        <stop  offset="1" style="stop-color:#dceff1"/>
- -->';
+        <stop  offset="1" style="stop-color:#dceff1"/>';}
  ?>
       </linearGradient>
       <path class="st3" d="M750.9,229.8c-14.8-7.9-28.7-15.4-57.2-15.4c-28.5,0-42.4,7.5-57.2,15.4c-15.2,8.2-30.9,16.6-62.1,16.6
@@ -314,10 +308,6 @@ while ($row = mysqli_fetch_array($result)){
               </div>
             </div>
             <div class="table-responsive">
-
-
-
-
             </div>
           </div>
         -->
