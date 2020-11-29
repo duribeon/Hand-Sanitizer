@@ -101,32 +101,35 @@
             <button id="alertBtn" class="btn btn-default">Alert</button>
           </div>
         -->
-          <table id="fresh-table" class="table">
-            <thead>
-              <th data-field="name" data-sortable="true">building</th>
-              <th data-field="country" data-sortable="true">location</th>
-              <th data-field="salary" data-sortable="true">remainder</th>
-              <th data-field="city">Organization</th>
-	      <th data-field="time">CHKDATE</th>
-              <th data-field="actions" data-formatter="operateFormatter" data-events="operateEvents">Dashboard</th>
-            </thead>
-	<?php
-		$connect = mysqli_connect("localhost","root","system","gakgak") or die("fail");
-		$query = "SELECT * FROM HS_list WHERE USERID='$sess_id' ORDER BY CHKDATE DESC LIMIT 1";
-		$result = $connect->query($query);
-		echo "<tbody>";
-		while ($row = mysqli_fetch_array($result)){
-			echo "<tr>";
-			echo "<td>".$row['BUILDING']."</td>";
-			echo "<td>".$row['LOCATION']."</td>";
-			echo "<td>".$row['REMAINDER']."</td>";
-			echo "<td>".$row['ORGAN']."</td>";
-			echo "<td>".$row['CHKDATE']."</td>";
-			echo "<td></td>";
-			echo "</tr>";
-		}
-		echo "</tbody>";
-	?>
+        <table id="fresh-table" class="table">
+          <thead>
+            <th data-field="name" data-sortable="true">building</th>
+            <th data-field="country" data-sortable="true">location</th>
+            <th data-field="salary" data-sortable="true">remainder</th>
+            <th data-field="city">Organization</th>
+            <th data-field="time">CHKDATE</th>
+            <th data-field="actions" data-formatter="operateFormatter" data-events="operateEvents">Dashboard</th>
+          </thead>
+      <?php
+              $connect = mysqli_connect("localhost","root","system","gakgak") or die("fail");
+              //$query = "SELECT * FROM HS_list WHERE USERID='$sess_id' ORDER BY CHKDATE DESC";
+              $query = "select * from HS_list where (LOCATION, CHKDATE) in (select LOCATION, max(CHKDATE) as date_time from HS_list group by LOCATION order by date_time desc)";
+              $result = $connect->query($query);
+              echo "<tbody>";
+              while ($row = mysqli_fetch_array($result)){
+                      $remain = $row['REMAINDER'] / $row['INIT_WEIGHT'] * 100;
+                      echo "<tr>";
+                      echo "<td>".$row['BUILDING']."</td>";
+                      echo "<td>".$row['LOCATION']."</td>";
+                      //echo "<td>".$row['REMAINDER']."%</td>";
+                      echo "<td>".$remain."%</td>";
+                      echo "<td>".$row['ORGAN']."</td>";
+                      echo "<td>".$row['CHKDATE']."</td>";
+                      echo "<td></td>";
+                      echo "</tr>";
+              }
+              echo "</tbody>";
+      ?>
           </table>
         </div>
 
@@ -174,7 +177,7 @@
           '<i class="fa fa-remove"></i>',
         '</a>'
         **/
-        '<a rel="tooltip" title="Dashboard" class="table-action edit" href="../argon-dashboard-master/index.html" title="Dashboard" style="margin-left:25px">',
+        '<a rel="tooltip" title="Dashboard" class="table-action edit" href="../argon-dashboard-master/dash.php" title="Dashboard" style="margin-left:25px">',
           '<i class="fa fa-chart-line"></i>',
         '</a>'
       ].join('')

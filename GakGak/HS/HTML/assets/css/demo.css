@@ -1,5 +1,5 @@
 body{
-    background: #A9E2F3;
+    background: #FFFFFF;
     /* background: url('../img/bg.jpg'); */
 
     background-size: cover;
@@ -384,7 +384,7 @@ h1 small{
 .logo-container .logo{
     overflow: hidden;
     border-radius: 50%;
-    border: 2px solid #FFFFFF;
+    border: 2px solid #111111;
     width: 58px;
     height: 58px;
     float: left;

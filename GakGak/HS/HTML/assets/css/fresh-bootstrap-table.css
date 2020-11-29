@@ -1160,7 +1160,7 @@ input[type=file] > input[type=button]::-moz-focus-inner {
   clear: both;
 }
 .fresh-table.toolbar-color-blue .fixed-table-toolbar {
-  background: #4087ea;
+  background-color: darkturquoise;
   background: -moz-radial-gradient(center, ellipse cover, #533ce1 0%, #4087ea 100%);
   /* FF3.6+ */
   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #533ce1), color-stop(100%, #4087ea));
