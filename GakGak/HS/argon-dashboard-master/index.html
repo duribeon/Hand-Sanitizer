@@ -17,6 +17,30 @@
   <!-- Page plugins -->
   <!-- Argon CSS -->
   <link rel="stylesheet" href="assets/css/argon.css?v=1.2.0" type="text/css">
+  <style type="text/css">
+
+   @import url('https://fonts.googleapis.com/css?family=Calligraffitti|Open+Sans');
+
+
+   .sea {
+    border: 3px;
+  }
+
+  .LightWaves {
+    animation: lightwaves 2s infinite;
+    position: relative;
+  }
+
+  @keyframes lightwaves {
+    0%,100% { transform: translate(0,0); }
+    25%     { transform: translate(5px,5px); transform: scale(1.05); }
+    50%     { transform: translate(25px, 5px); }
+    75%     { transform: translate(12px,10px); transform: scale(1.05); }
+  }
+
+</style>
+
+
 </head>
 
 <body>
@@ -135,55 +159,101 @@
               </div>
             </div>
             <div class="card-body">
-              <!-- Chart -->
-              <div class="chart">
-                <canvas id="chart-bars" class="chart-canvas"></canvas>
-              </div>
-            </div>
+            
+              <img src ="base.png" style="width: 290px; height: 560px; padding-bottom: 97px;">
+
+
+              <svg class="sea"style="transform:translateX(-233px);"version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="180px"
+              height="290px" viewBox="30-30 170 360" style="enable-background:new 0 0 800 400;" xml:space="preserve"> <!--물통 -90~ 190-->
+
+              <style type="text/css">
+                <![CDATA[
+                .st0{opacity:0.76;}
+                .st1{fill:url(#SVGID_1_);}
+                .st2{fill:url(#SVGID_2_);}
+                .st3{fill:url(#SVGID_3_);}
+                .st4{fill:none;stroke:#FFFFFF;stroke-width:4;stroke-miterlimit:10;}
+                ]]>
+              </style>
+
+              <g id="LightWaves" class="LightWaves">
+                <g>
+                  <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="400.0005" y1="600" x2="400.0005" y2="214.3545">
+                      <!--  -->
+                    <stop  offset="0" style="stop-color:#008cff"/>
+                    <stop  offset="0.1643" style="stop-color:#008cff"/>
+                    <stop  offset="0.3574" style="stop-color:#209bff"/>
+                    <stop  offset="0.5431" style="stop-color:#7cacf5"/>
+                    <stop  offset="0.7168" style="stop-color:#99ceff"/>
+                    <stop  offset="0.874" style="stop-color:#a9e7ff"/>
+                    <stop  offset="1" style="stop-color:#dceff1"/>
+
+                    <!-- type2 
+                    <stop  offset="0" style="stop-color:#4be05f"/>
+                    <stop  offset="0.1643" style="stop-color:#4be05f"/>
+                    <stop  offset="0.3574" style="stop-color:#6ae47a"/>
+                    <stop  offset="0.5431" style="stop-color:#97e280"/>
+                    <stop  offset="0.7168" style="stop-color:#c9f19c"/>
+                    <stop  offset="0.874" style="stop-color:#c3fccc"/>
+                    <stop  offset="1" style="stop-color:#cdf5df"/>
+-->
+                  </linearGradient>
+                  <path class="st3" d="M750.9,229.8c-14.8-7.9-28.7-15.4-57.2-15.4c-28.5,0-42.4,7.5-57.2,15.4c-15.2,8.2-30.9,16.6-62.1,16.6
+                  s-46.9-8.4-62.1-16.6c-14.8-7.9-28.7-15.4-57.2-15.4c-28.5,0-42.4,7.5-57.2,15.4c-15.2,8.2-30.9,16.6-62.1,16.6
+                  c-31.2,0-46.9-8.4-62.1-16.6c-14.8-7.9-28.7-15.4-57.2-15.4c-28.5,0-42.4,7.5-57.2,15.4c-15.2,8.2-30.9,16.6-62.1,16.6
+                  c-31.2,0-46.9-8.4-62.1-16.6c-14.8-7.9-28.9-15.4-57.3-15.4c-16.9,0-28.8,2.6-38.8,6.4V600h922V237c-12,5.3-26,9.4-47.8,9.4
+                  C782.1,246.4,766.1,237.9,750.9,229.8z"/>
+                </g>
+              </g>
+            </svg>
+<!-- type2 -->
+
+
           </div>
         </div>
-        <div class="col-xl-8">
-          <div class="card bg-default">
-            <div class="card-header bg-transparent">
-              <div class="row align-items-center">
-                <div class="col">
-                  <h6 class="text-light text-uppercase ls-1 mb-1">Overview</h6>
-                  <h5 class="h3 text-white mb-0">Sales value</h5>
-                </div>
-                <div class="col">
-                  <ul class="nav nav-pills justify-content-end">
-                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales-dark" data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-prefix="$" data-suffix="k">
-
-                    </li>
-                    <li class="nav-item" data-toggle="chart" data-target="#chart-sales-dark" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-prefix="$" data-suffix="k">
-                      <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
-                        <span class="d-none d-md-block">Week</span>
-                        <span class="d-md-none">W</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="card-body">
-              <!-- Chart -->
-              <div class="chart">
-                <!-- Chart wrapper -->
-                <canvas id="chart-sales-dark" class="chart-canvas"></canvas>
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-
-
-
-
       </div>
-      <div class="row">
-        <div class="col-xl-8">
+      <div class="col-xl-8">
+        <div class="card bg-default">
+          <div class="card-header bg-transparent">
+            <div class="row align-items-center">
+              <div class="col">
+                <h6 class="text-light text-uppercase ls-1 mb-1">Overview</h6>
+                <h5 class="h3 text-white mb-0">Sales value</h5>
+              </div>
+              <div class="col">
+                <ul class="nav nav-pills justify-content-end">
+                  <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales-dark" data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-prefix="$" data-suffix="k">
+
+                  </li>
+                  <li class="nav-item" data-toggle="chart" data-target="#chart-sales-dark" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-prefix="$" data-suffix="k">
+                    <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
+                      <span class="d-none d-md-block">Week</span>
+                      <span class="d-md-none">W</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <!-- Chart -->
+            <div class="chart">
+              <!-- Chart wrapper -->
+              <canvas id="chart-sales-dark" class="chart-canvas"></canvas>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+
+
+
+    </div>
+    <div class="row">
+      <div class="col-xl-8">
 
 <!--
           <div class="card">
@@ -204,36 +274,36 @@
 
             </div>
           </div>
--->
-
-        </div>
-
-
-        <div class="col-xl-4">
-
-        </div>
+        -->
 
       </div>
-      <!-- Footer -->
-      <footer class="footer pt-0">
 
-      </footer>
+
+      <div class="col-xl-4">
+
+      </div>
+
     </div>
+    <!-- Footer -->
+    <footer class="footer pt-0">
+
+    </footer>
   </div>
+</div>
 
 
-  <!-- Argon Scripts -->
-  <!-- Core -->
-  <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/js-cookie/js.cookie.js"></script>
-  <script src="assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-  <script src="assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-  <!-- Optional JS -->
-  <script src="assets/vendor/chart.js/dist/Chart.min.js"></script>
-  <script src="assets/vendor/chart.js/dist/Chart.extension.js"></script>
-  <!-- Argon JS -->
-  <script src="assets/js/argon.js?v=1.2.0"></script>
+<!-- Argon Scripts -->
+<!-- Core -->
+<script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/js-cookie/js.cookie.js"></script>
+<script src="assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+<script src="assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+<!-- Optional JS -->
+<script src="assets/vendor/chart.js/dist/Chart.min.js"></script>
+<script src="assets/vendor/chart.js/dist/Chart.extension.js"></script>
+<!-- Argon JS -->
+<script src="assets/js/argon.js?v=1.2.0"></script>
 </body>
 
 </html>
