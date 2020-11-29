@@ -1,4 +1,5 @@
 
+
 <?php 
 //session_start();
 //$sess_id=$_SESSION['id'];
@@ -186,7 +187,7 @@ while ($row = mysqli_fetch_array($result)){
   <img src ="base.jpg" style="transform:translatex(-50px);width: 239px; height: 350px;">
 
   <svg class="sea"style="transform:translateX(-246px);"version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="143px"
-  height="340px" viewBox="30 0 170 360" style="enable-background:new 0 0 800 400;"> <!--물통 -90~ 190-->
+  height="340px" viewBox="30 <?php echo -120+2.2*$per;?> 170 360" style="enable-background:new 0 0 800 400;"> <!--물통 -90~ 190-->
 
   <style>
     <![CDATA[
