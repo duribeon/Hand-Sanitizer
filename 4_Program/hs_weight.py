@@ -4,6 +4,9 @@ import time
 import sys
 import csv
 import os
+import pymysql
+import datetime
+
 EMULATE_HX711=False
 
 referenceUnit = 1
@@ -118,7 +121,38 @@ while True:
                                      }
             response = requests.request("POST",url,headers=headers,data=payload)
             print(response.text.encode('utf8'))
-    
+
+            remainder = val
+
+            conn = pymysql.connect(host='34.64.157.47',user='duri',password='gakgak',charset='utf8')
+            curs = conn.cursor()
+
+            sql = "USE gakgak;"
+            curs.execute(sql)
+
+            sql = "SELECT * FROM HS_list WHERE LOCATION=446 ORDER BY CHKDATE DESC LIMIT 1;"
+            curs.execute(sql)
+            result = curs.fetchall()
+            for row in result:
+                p_remainder = row[2]
+                p_init_weight = row[3]
+                p_chg = row[7] 
+
+            if (remainder+300 > p_remainder):
+                chg = p_chg + 1
+                init_weight = remainder
+            else:
+                chg = p_chg
+                init_weight = p_init_weight
+
+            sql = 'INSERT INTO HS_list (BUILDING, LOCATION, REMAINDER,INIT_WEIGHT,ORGAN,CHKDATE, USERID,chg) VALUES ("AI center","446", %s,%s,"Sejong Univ",%s,"duri",%s);'
+            now = datetime.datetime.now();
+
+            curs.execute(sql,(remainder,init_weight,now,chg))
+            conn.commit()
+            conn.close()
+
+            print("Uploaded Weight Data!")
     
     except (KeyboardInterrupt, SystemExit):
         cleanAndExit()
