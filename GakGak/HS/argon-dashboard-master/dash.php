@@ -1297,10 +1297,10 @@ var SalesChart = (function() {
       },
       data: {
         
-        labels: [arr1[0], arr1[1], arr1[2], arr1[3], arr1[4], arr1[5], arr1[6], arr1[7]],
+        labels: [arr2[0], arr2[1], arr2[2], arr2[3], arr2[4], arr2[5], arr2[6], arr2[7]],
         datasets: [{
           label: 'Performance',
-          data: [arr2[0], arr2[1], arr2[2], arr2[3], arr2[4], arr2[5], arr2[6], arr2[7]]
+          data: [arr1[0], arr1[1], arr1[2], arr1[3], arr1[4], arr1[5], arr1[6], arr1[7]]
         }]
       }
     });
