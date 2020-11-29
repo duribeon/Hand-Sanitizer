@@ -1,11 +1,11 @@
 
 
 <?php 
-session_start();
-$sess_id=$_SESSION['id'];
+//session_start();
+//$sess_id=$_SESSION['id'];
 $connect = mysqli_connect("localhost","root","system","gakgak") or die("fail");
-#echo $_SESSION['id'];
-#$sess_id='duri';
+
+$sess_id='duri';
 $query = "SELECT * FROM HS_list WHERE USERID='$sess_id' AND LOCATION='446' ORDER BY CHKDATE DESC LIMIT 1";
 $result=$connect->query($query);
 while ($row = mysqli_fetch_array($result)){
@@ -68,6 +68,69 @@ while ($row = mysqli_fetch_array($result)){
 
 </style>
 
+<script type="text/javascript">
+    $(document).ready(function() {
+      init();      
+
+    })
+    
+
+
+  function init($chart) {
+
+    var salesChart = new Chart($chart, {
+      type: 'line',
+      options: {
+        scales: {
+          yAxes: [{
+            gridLines: {
+              lineWidth: 1,
+              color: Charts.colors.gray[900],
+              zeroLineColor: Charts.colors.gray[900]
+            },
+            ticks: {
+              callback: function(value) {
+                if (!(value % 10)) {
+                  return '$' + value + 'k';
+                }
+              }
+            }
+          }]
+        },
+        tooltips: {
+          callbacks: {
+            label: function(item, data) {
+              var label = data.datasets[item.datasetIndex].label || '';
+              var yLabel = item.yLabel;
+              var content = '';
+
+              if (data.datasets.length > 1) {
+                content += '<span class="popover-body-label mr-auto">' + label + '</span>';
+              }
+
+              content += '<span class="popover-body-value">$' + yLabel + 'k</span>';
+              return content;
+            }
+          }
+        }
+      },
+      data: {
+        labels: ['may', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        datasets: [{
+          label: 'Performance',
+          data: [10, 20, 10, 30, 15, 40, 20, 60, 60]
+        }]
+      }
+    });
+
+    // Save to jQuery object
+
+    $chart.data('chart', salesChart);
+
+  };
+
+</style>
+
 
 
 </head>
@@ -86,7 +149,7 @@ while ($row = mysqli_fetch_array($result)){
 
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                  <li class="breadcrumb-item"><a href="../HTML/full_list.php"style="color: darkturquoise;"><i class="fas fa-home"></i></a></li>
+                  <li class="breadcrumb-item"><a href="../HTML/full_list.html"style="color: darkturquoise;"><i class="fas fa-home"></i></a></li>
                   <li class="breadcrumb-item"><a href="#" style="color: darkturquoise;">Dashboards</a></li>
                   <!--<li class="breadcrumb-item active" aria-current="page">Default</li> -->
                 </ol>
@@ -282,6 +345,8 @@ else{
               <!-- Chart wrapper -->
               <canvas id="chart-sales-dark" class="chart-canvas"></canvas>
             </div>
+
+
           </div>
 
 
