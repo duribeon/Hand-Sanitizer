@@ -107,7 +107,7 @@ while ($row = mysqli_fetch_array($result)){
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
-                        <i class="ni ni-active-40"></i>
+                        <i class="ni ni-building"></i>
                       </div>
                     </div>
                   </div>
@@ -125,7 +125,7 @@ while ($row = mysqli_fetch_array($result)){
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
-                        <i class="ni ni-chart-pie-35"></i>
+                        <i class="ni ni-square-pin"></i>
                       </div>
                     </div>
                   </div>
@@ -143,7 +143,7 @@ while ($row = mysqli_fetch_array($result)){
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
-                        <i class="ni ni-money-coins"></i>
+                        <i class="ni ni-chart-pie-35"></i>
                       </div>
                     </div>
                   </div>
@@ -161,7 +161,7 @@ while ($row = mysqli_fetch_array($result)){
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
-                        <i class="ni ni-chart-bar-32"></i>
+                        <i class="ni ni-check-bold"></i>
                       </div>
                     </div>
                   </div>
@@ -269,10 +269,7 @@ else{
 
                   </li>
                   <li class="nav-item" data-toggle="chart" data-target="#chart-sales-dark" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-prefix="$" data-suffix="k">
-                    <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
-                      <span class="d-none d-md-block">Week</span>
-                      <span class="d-md-none">W</span>
-                    </a>
+                    
                   </li>
                 </ul>
               </div>
