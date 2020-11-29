@@ -13,10 +13,17 @@ while ($row = mysqli_fetch_array($result)){
 
                        $remain=$row['REMAINDER'];
                        $init=$row['INIT_WEIGHT'];
+
+                       $building=$row['BUILDING'];
+                       $loc=$row['LOCATION'];
+
+                       $org=$row['ORGAN'];
+                       $chg=$row['chg'];
+                       
                       }
 
  $per=(int)$remain/(int)$init *100;
-#echo $per;
+
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +78,7 @@ while ($row = mysqli_fetch_array($result)){
   <div class="main-content" id="panel">
     <!-- Header -->
     <!-- Header -->
-    <div class="header bg-primary pb-6">
+    <div class="header pb-6" style="background-color: darkturquoise;">
       <div class="container-fluid">
         <div class="header-body">
           <div class="row align-items-center py-4">
@@ -79,15 +86,13 @@ while ($row = mysqli_fetch_array($result)){
 
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                  <li class="breadcrumb-item"><a href="../HTML/full_list.html"><i class="fas fa-home"></i></a></li>
-                  <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
+                  <li class="breadcrumb-item"><a href="../HTML/full_list.html"style="color: darkturquoise;"><i class="fas fa-home"></i></a></li>
+                  <li class="breadcrumb-item"><a href="#" style="color: darkturquoise;">Dashboards</a></li>
                   <!--<li class="breadcrumb-item active" aria-current="page">Default</li> -->
                 </ol>
               </nav>
             </div>
-            <div class="col-lg-6 col-5 text-right">
-              <a href="#" class="btn btn-sm btn-neutral">Update</a>
-            </div>
+
           </div>
           <!-- Card stats -->
           <div class="row">
@@ -97,8 +102,8 @@ while ($row = mysqli_fetch_array($result)){
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Total traffic</h5>
-                      <span class="h2 font-weight-bold mb-0">350,897</span>
+                      <h5 class="card-title text-uppercase text-muted mb-0">Building</h5>
+                      <span class="h2 font-weight-bold mb-0"><?php echo $building;?></span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
@@ -115,8 +120,8 @@ while ($row = mysqli_fetch_array($result)){
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">New users</h5>
-                      <span class="h2 font-weight-bold mb-0">2,356</span>
+                      <h5 class="card-title text-uppercase text-muted mb-0">Location</h5>
+                      <span class="h2 font-weight-bold mb-0"><?php echo $loc;?></span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
@@ -133,8 +138,8 @@ while ($row = mysqli_fetch_array($result)){
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Sales</h5>
-                      <span class="h2 font-weight-bold mb-0">924</span>
+                      <h5 class="card-title text-uppercase text-muted mb-0">Percent</h5>
+                      <span class="h2 font-weight-bold mb-0"><?php echo $per;?></span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
@@ -151,8 +156,8 @@ while ($row = mysqli_fetch_array($result)){
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Performance</h5>
-                      <span class="h2 font-weight-bold mb-0">49,65%</span>
+                      <h5 class="card-title text-uppercase text-muted mb-0">바꾼횟수</h5>
+                      <span class="h2 font-weight-bold mb-0"><?php echo $chg;?></span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
