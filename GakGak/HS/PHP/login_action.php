@@ -8,7 +8,7 @@
         $result = $connect->query($query);
     	if($result->num_rows>0){
                 $row=mysqli_fetch_assoc($result);
-               echo $row['PASSWD'] . " " . $password . " " .($row['PASSWD']==$password);
+               #echo $row['PASSWD'] . " " . $password . " " .($row['PASSWD']==$password);
 		if($row['PASSWD']==$password){  
 		     $_SESSION['id']=$id;
                         if(isset($_SESSION['id'])){
