@@ -5,7 +5,7 @@
 $connect = mysqli_connect("localhost","root","system","gakgak") or die("fail");
 
 $sess_id='duri';
-$query = "SELECT * FROM HS_list WHERE USERID='$sess_id' ORDER BY CHKDATE DESC LIMIT 1";
+$query = "SELECT * FROM HS_list WHERE USERID='$sess_id' AND LOCATION='446' ORDER BY CHKDATE DESC LIMIT 1";
 $result=$connect->query($query);
 while ($row = mysqli_fetch_array($result)){
                       echo $row['REMAINDER'] . " " . $row['INIT_WEIGHT'];
@@ -201,7 +201,8 @@ while ($row = mysqli_fetch_array($result)){
         
 
         <?php
-        echo $remain ." ".$init;
+        
+	echo ' 
 
         <!--
         
@@ -236,7 +237,7 @@ while ($row = mysqli_fetch_array($result)){
         <stop  offset="0.7168" style="stop-color:#ff4242"/>
         <stop  offset="0.874" style="stop-color:#ff0000"/>
         <stop  offset="1" style="stop-color:#dceff1"/>
- -->
+ -->';
  ?>
       </linearGradient>
       <path class="st3" d="M750.9,229.8c-14.8-7.9-28.7-15.4-57.2-15.4c-28.5,0-42.4,7.5-57.2,15.4c-15.2,8.2-30.9,16.6-62.1,16.6
