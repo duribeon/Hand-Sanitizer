@@ -122,7 +122,10 @@
                       echo "<td>".$row['BUILDING']."</td>";
                       echo "<td>".$row['LOCATION']."</td>";
                       //echo "<td>".$row['REMAINDER']."%</td>";
-                      echo "<td>".$remain."%</td>";
+                        if ($remain <=20)
+                                echo "<td><i class=\"fa fa-exclamation-triangle\" style=\"color:red\"></i>".$remain."%</td>";
+                        else
+                                echo "<td>".$remain."%</td>";
                       echo "<td>".$row['ORGAN']."</td>";
                       echo "<td>".$row['CHKDATE']."</td>";
                       echo "<td></td>";
