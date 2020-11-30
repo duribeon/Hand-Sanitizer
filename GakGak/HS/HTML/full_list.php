@@ -113,7 +113,7 @@
       <?php
               $connect = mysqli_connect("localhost","root","system","gakgak") or die("fail");
               //$query = "SELECT * FROM HS_list WHERE USERID='$sess_id' ORDER BY CHKDATE DESC";
-              $query = "select * from HS_list where (LOCATION, CHKDATE) in (select LOCATION, max(CHKDATE) as date_time from HS_list group by LOCATION order by date_time desc)";
+              $query = "select * from HS_list where (LOCATION, CHKDATE) in (select LOCATION, max(CHKDATE) as date_time from HS_list where userid='$sess_id' group by LOCATION order by date_time desc)";
               $result = $connect->query($query);
               echo "<tbody>";
               while ($row = mysqli_fetch_array($result)){
