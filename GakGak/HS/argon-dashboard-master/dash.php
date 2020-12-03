@@ -38,19 +38,19 @@ $result=$connect->query($query);while ($row = mysqli_fetch_array($result)){
                          $buildinga=$row['BUILDING'];
                          $loca=$row['LOCATION'];
                          $date=$row['CHKDATE'];
-  
+ 			if($c==0){
+
+	$d1=substr($date,2,8);
+}
+if($c==20){
+$d2=substr($date,2,8);
+} 
                          $orga=$row['ORGAN'];
                          $chga=$row['chg'];
 			$date=substr($date,10,6);
                          $per2=(int)$remaina/(int)$inita *100;
                          array_push($garr,$per2);
                          array_push($darr,$date);
-                         if($c==0){
-                           $d1=$date;
-                         }
-                         if($c==20){
-                           $d2=$date;
-                         }
                          $c=$c+1;
                          
                         }
@@ -302,9 +302,8 @@ else{
 
                   </li>
                   <li class="nav-item" data-toggle="chart" data-target="#chart-sales-dark" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-suffix="%">
-                    <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
-                      <span class="d-none d-md-block"><?php echo $d1 . $d2;?></span>
-                      
+                    <!--<a href="#" class="nav-link py-2 px-3" data-toggle="tab">-->
+                      <span class="d-none d-md-block nav-link"><?php echo $d2 ." ~ ". $d1;?></span>
                   </li>
                 </ul>
               </div>
