@@ -123,9 +123,9 @@
                       echo "<td>".$row['LOCATION']."</td>";
                       //echo "<td>".$row['REMAINDER']."%</td>";
                         if ($remain <=20)
-                                echo "<td><i class=\"fa fa-exclamation-triangle\" style=\"color:red\"></i>".$remain."%</td>";
+                                echo "<td><i class=\"fa fa-exclamation-triangle\" style=\"color:red\"></i>".round($remain,2)."%</td>";
                         else
-                                echo "<td>".$remain."%</td>";
+                                echo "<td>".round($remain,2)."%</td>";
                       echo "<td>".$row['ORGAN']."</td>";
                       echo "<td>".$row['CHKDATE']."</td>";
                       echo "<td></td>";
