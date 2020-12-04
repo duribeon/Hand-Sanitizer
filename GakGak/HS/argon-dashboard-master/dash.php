@@ -21,8 +21,8 @@ while ($row = mysqli_fetch_array($result)){
                       }
 
  $per=(int)$remain/(int)$init *100;
-
- $garr=[];
+$per=(int)$per; 
+$garr=[];
  $darr=[];
 
  $c=0;
@@ -803,10 +803,10 @@ var Charts = (function() {
 				var content = '';
 
 				if (data.datasets.length > 1) {
-					content += '<span class="popover-body-label mr-auto">' + label + '</span>';
+					content +=  label ;
 				}
 
-				content += '<span class="popover-body-value">' + prefix + yLabel + suffix + '</span>';
+				content +=  prefix + yLabel + suffix ;
 				return content;
 			}
 
@@ -1293,10 +1293,10 @@ var SalesChart = (function() {
               var content = '';
 
               if (data.datasets.length > 1) {
-                content += '<span class="popover-body-label mr-auto">' + label + '</span>';
+                content +=  label+'%';
               }
 
-              content += '<span class="popover-body-value">$' + yLabel + 'k</span>';
+              content +=  yLabel+'%' ;
               return content;
             }
           }
